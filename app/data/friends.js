@@ -16,8 +16,35 @@ let friendsArray = [
             1
         ]
     }, {
-
+        "name":"Jimmy",
+        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "scores":[
+            3,
+            4,
+            4,
+            4,
+            1,
+            1,
+            3,
+            5,
+            2,
+            3
+        ]
     }, {
+        "name":"Brad",
+        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "scores":[
+            4,
+            2,
+            1,
+            5,
+            5,
+            1,
+            3,
+            2,
+            4,
+            1
+        ]
     }
 ];
 
