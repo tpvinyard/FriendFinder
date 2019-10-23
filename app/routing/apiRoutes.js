@@ -29,7 +29,3 @@ module.exports = function(app) {
         res.json(true);
     })
 }
-
-function checkCompatibility(answerArray) {
-
-}
