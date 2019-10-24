@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script>
+    <!-- <script>
         function validateForm() {
             var x = document.forms["needs-validation"]["nameOfPerson"].value;
             if (x == "") {
@@ -17,12 +17,12 @@
                 return false;
             }
         }
-    </script>
+    </script> -->
     
 </head>
 <body>
     <div class="container">
-        <h2>Survey Questions</h2>
+        <h1>Survey Questions</h1>
         <hr>
         <h3>About You</h3>
         <form name="needs-validation">
@@ -145,12 +145,14 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-primary submit">Submit</button>
+
         </form>
+        <br>
         <footer class="footer">
             <div class="container">
             <p>
                 <a href="/api/friends">API Friends List</a> |
-                <a href="">GitHub Repo</a>
+                <a href="https://github.com/tpvinyard/FriendFinder">GitHub Repo</a>
             </div>
         </footer>
     </div> 
@@ -159,13 +161,15 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="matchText">Best Match</h5>
+              <h3 class="modal-title" id="matchText">Best Match</h3>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body" id="nameOfMatch">
-            </div>
+            <br>
+            <h2 class="modal-body" id="nameOfMatch">
+            </h2>
+            <br>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -177,54 +181,62 @@
 </html>
 
 <script type='text/javascript'>
+    function valid() {
+        let isValid = true;
+        if ($("#nameOfPerson").val() === "") {
+            isValid = false;
+        }
+        return isValid;
+    }
 
     $(".submit").on("click", function(event) {
-
+        
         event.preventDefault();
-        validateForm();
-
-        let newPerson = {
-            name: $("#nameOfPerson").val().trim(),
-            scores: [
-                $("#q1").val(),
-                $("#q2").val(),
-                $("#q3").val(),
-                $("#q4").val(),
-                $("#q5").val(),
-                $("#q6").val(),
-                $("#q7").val(),
-                $("#q8").val(),
-                $("#q9").val(),
-                $("#q10").val()
-            ]
-        }
-        console.log(newPerson);
-
-        $.post("/api/friends", newPerson, function(data) {
-
-            if (data) {
-                console.log(data);
+        // validateForm();
+        if(valid()) {
+            let newPerson = {
+                name: $("#nameOfPerson").val().trim(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
             }
+            console.log(newPerson);
 
-            // Clear the form when submitting
-            $("#nameOfPerson").val("");
-            $("#q1").val("1");
-            $("#q2").val("1");
-            $("#q3").val("1");
-            $("#q4").val("1");
-            $("#q5").val("1");
-            $("#q6").val("1");
-            $("#q7").val("1");
-            $("#q8").val("1");
-            $("#q9").val("1");
-            $("#q10").val("1");
+            $.post("/api/friends", newPerson, function(data) {
 
-            // showModal(data);
-            $('#nameOfMatch').text(data.matchedPerson);
-            $('#myModal').modal('show')
-            
+                if (data) {
+                    console.log(data);
+                }
 
-        });
+                // Clear the form when submitting
+                $("#nameOfPerson").val("");
+                $("#q1").val("1");
+                $("#q2").val("1");
+                $("#q3").val("1");
+                $("#q4").val("1");
+                $("#q5").val("1");
+                $("#q6").val("1");
+                $("#q7").val("1");
+                $("#q8").val("1");
+                $("#q9").val("1");
+                $("#q10").val("1");
+
+                showModal(data);
+                
+
+            });
+        } else {
+            alert('please fill in the name field!');
+        }
     })
 
     function showModal(data) {
