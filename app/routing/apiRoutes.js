@@ -26,6 +26,6 @@ module.exports = function(app) {
             }
         }
 
-        res.json(true);
+        res.json({matchTotal, matchedPerson});
     })
 }
