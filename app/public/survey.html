@@ -9,15 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- <script>
-        function validateForm() {
-            var x = document.forms["needs-validation"]["nameOfPerson"].value;
-            if (x == "") {
-                alert("Name must be filled out");
-                return false;
-            }
-        }
-    </script> -->
     
 </head>
 <body>
@@ -26,12 +17,9 @@
         <hr>
         <h3>About You</h3>
         <form name="needs-validation">
-            <div class="form-group">
+            <div class="form-group" id="nameForm">
                 <label for="nameOfPerson">Name (Required)</label>
                 <input type="text" class="form-control" id="nameOfPerson" name="nameOfPerson" required>
-                <div class="invalid-feedback">
-                    Please provide your name.
-                </div>
             </div>
         <hr>
             <div class="form-group">
@@ -192,8 +180,8 @@
     $(".submit").on("click", function(event) {
         
         event.preventDefault();
-        // validateForm();
         if(valid()) {
+            $('#invalid-text').remove();
             let newPerson = {
                 name: $("#nameOfPerson").val().trim(),
                 scores: [
@@ -235,7 +223,8 @@
 
             });
         } else {
-            alert('please fill in the name field!');
+            $("#nameForm").append("<p style='color:red;' id='invalid-text'>Please Input a Name.</p>");
+            $("#nameOfPerson").focus();
         }
     })
 
