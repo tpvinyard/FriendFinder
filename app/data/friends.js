@@ -2,7 +2,6 @@
 let friendsArray = [
     {
         "name":"Ahmed",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
         "scores":[
             5,
             1,
@@ -17,7 +16,6 @@ let friendsArray = [
         ]
     }, {
         "name":"Jimmy",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
         "scores":[
             3,
             4,
@@ -32,7 +30,6 @@ let friendsArray = [
         ]
     }, {
         "name":"Brad",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
         "scores":[
             4,
             2,
@@ -44,6 +41,160 @@ let friendsArray = [
             2,
             4,
             1
+        ]
+    }, {
+        "name":"Cyndi",
+        "scores":[
+            5,
+            4,
+            4,
+            2,
+            3,
+            1,
+            3,
+            1,
+            2,
+            4
+        ]
+    }, {
+        "name":"Brian",
+        "scores":[
+            1,
+            1,
+            3,
+            2,
+            1,
+            1,
+            4,
+            4,
+            3,
+            3
+        ]
+    }, {
+        "name":"Gabe",
+        "scores":[
+            4,
+            2,
+            5,
+            5,
+            4,
+            1,
+            3,
+            5,
+            3,
+            1
+        ]
+    }, {
+        "name":"Ian",
+        "scores":[
+            5,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            3
+        ]
+    }, {
+        "name":"Mason",
+        "scores":[
+            1,
+            2,
+            4,
+            4,
+            3,
+            1,
+            5,
+            5,
+            2,
+            1
+        ]
+    }, {
+        "name":"Brittany",
+        "scores":[
+            1,
+            2,
+            4,
+            1,
+            1,
+            5,
+            3,
+            5,
+            5,
+            3
+        ]
+    }, {
+        "name":"Melissa",
+        "scores":[
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ]
+    }, {
+        "name":"Shirley",
+        "scores":[
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+        ]
+    }, {
+        "name":"Alia",
+        "scores":[
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+        ]
+    }, {
+        "name":"Charlotte",
+        "scores":[
+            4,
+            4,
+            2,
+            2,
+            1,
+            1,
+            5,
+            3,
+            3,
+            4
+        ]
+    }, {
+        "name":"Johnny",
+        "scores":[
+            5,
+            2,
+            2,
+            2,
+            3,
+            4,
+            3,
+            5,
+            3,
+            3
         ]
     }
 ];
